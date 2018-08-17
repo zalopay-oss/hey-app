@@ -1,0 +1,26 @@
+/ca-frontend/target/
+/ca-frontend/log/
+/ca-backend/target/
+/ca-backend/log/
+/ca-frontend/node_modules/
+.idea
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+ 
+# Intellij
+.idea/
+*.iml
+*.iws
+ 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
+
+hey-frontend/package-lock\.json

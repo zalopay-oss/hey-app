@@ -1,0 +1,8 @@
+@startuml
+hide footbox
+
+actor "User A"
+note over "User A": User A was handshaked and subscribed
+"App Server" --> "User A": When a friend of user A online or new message come to user A,\nServer will push notify to topic <user id A>
+
+@enduml

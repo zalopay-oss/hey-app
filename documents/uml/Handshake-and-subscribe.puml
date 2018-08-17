@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+
+actor "User A"
+
+"User A" -> "App Server": Send a HTTP Handshakes with JWT
+"App Server" -> "Redis Server": Check JWT BlackList
+"App Server" -> "App Server": Validate JWT and create topic <user id A>
+"App Server" -> "User A": Connection authenticated\nUser A was subscribed on topic <user id A>
+
+@enduml

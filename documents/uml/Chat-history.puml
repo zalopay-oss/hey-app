@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+
+actor "User A"
+
+note over "User A": User A was handshaked and subscribed
+"User A" -> "App Server": Send a <chat uid> to server
+"App Server" -> "Redis Server": Get chat history via <chat uid>
+"App Server" -> "User A": Send chat history result to user A via topic <user id A>
+
+@enduml

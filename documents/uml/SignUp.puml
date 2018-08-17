@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+
+actor "User"
+
+"User" -> "App server": User send info to signup
+"App server" -> "Redis Server": Store user name and hashed password
+"App server" -> "App server": Logging signup result
+"App server" --> "User": Return result to user
+
+@enduml

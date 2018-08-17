@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="systemConfiguration" schema="http://jakarta.apache.org/log4j2/">
+    <Properties>
+        <Property name="log-path">log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="console-appender" target="STDOUT">
+            <PatternLayout>
+                <pattern>
+                    %highlight{[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n}
+                </pattern>
+            </PatternLayout>
+        </Console>
+        <RollingFile name="user-tracking-appender" append="true"
+                     fileName="${log-path}/user-tracking.log" filePattern="${log-path}/user-tracking-%d{yyyy-MM-dd-HH}_%i.log" >
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <OnStartupTriggeringPolicy minSize="1"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="system-file-appender" append="true"
+                     fileName="${log-path}/system.log" filePattern="${log-path}/system-%d{yyyy-MM-dd-HH}_%i.log" >
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <OnStartupTriggeringPolicy minSize="1"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="user-tracking-Logger" level="info" additivity="false">
+            <AppenderRef ref="user-tracking-appender"/>
+            <AppenderRef ref="console-appender"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="console-appender"/>
+            <AppenderRef ref="system-file-appender"/>
+        </Root>
+    </Loggers>
+</Configuration>

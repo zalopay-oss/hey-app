@@ -1,0 +1,48 @@
+version: '3.7'
+services:
+
+  hey-frontend:
+    container_name: hey-frontend
+    build:
+      context: ./hey-frontend
+      dockerfile: Dockerfile
+    volumes:
+      - './hey-frontend:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+
+  redis:
+    container_name: hey-redis
+    image: redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - hey-redis-data:/data
+    networks:
+     - backend-network
+
+  hey-backend:
+    container_name: hey-backend
+    build:
+      context: ./hey-backend
+      dockerfile: Dockerfile
+    volumes:
+      - 'hey-backend-log:/usr/src/app/log'
+    networks:
+     - backend-network
+    ports:
+      - '8080:8080'
+      - '8090:8090'
+    environment:
+      - env=production
+      - vertx.disableDnsResolver=true
+
+networks:
+  backend-network:
+    driver: bridge
+
+volumes:
+  hey-redis-data:
+  hey-backend-log:

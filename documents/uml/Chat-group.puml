@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+actor "User A"
+actor "Other Users"
+
+note over "User A": User A was handshaked and subscribed
+"User A" -> "App Server": Send a message to other users in group chat
+"App Server" --> "Other Users": Send message to topics \nwhich other users was subscribed base on <user id>
+"App Server" -> "Redis Server": Store this message to redis
+
+@enduml

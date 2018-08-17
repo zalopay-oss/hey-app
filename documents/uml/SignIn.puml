@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+actor "User"
+
+"User" -> "App Server": Login with user name + password
+"App Server" -> "Redis Server": Validate user with hashed password
+"App Server" --> "App Server": User authenticated then create JWT
+"App Server" --> "User": Return JWT to User
+"User" -> "App Server": User passes JWT when making API calls
+"App Server" --> "User": Application verifies and processes API
+
+@enduml

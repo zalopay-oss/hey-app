@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+
+actor "User A"
+
+"User A" -> "App Server": Sent a POST request with JWT to update status
+"App Server" -> "Redis Server": Check JWT BlackList
+"App Server" -> "Redis Server": Validate JWT then update status
+"App Server" -> "User A": Return result to user A
+
+@enduml

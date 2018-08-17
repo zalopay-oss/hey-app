@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+
+actor "User"
+
+"User" -> "App server": User send JWT to logout
+"App server" -> "Redis server": Add JWT to token Blacklist
+"App server" -> "App server": Logging result
+"App server" --> "User": Return result to user
+
+@enduml
