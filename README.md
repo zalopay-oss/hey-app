@@ -22,7 +22,7 @@ To achieve these functionalities, we will use following technology stack:
 - Redis as database
 
 
-## Brief UI of Hey
+## Brief UIs of Hey
 
 ![Hey App](https://github.com/zalopay-oss/hey-app/blob/master/presentation/image001.gif)
 
