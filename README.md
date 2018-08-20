@@ -23,7 +23,7 @@ To achieve these functionalities, we will use following technology stack:
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. For more detail please refer to our [wiki](https://gitlab.zalopay.vn/zalopay-oss/hey-app/wikis/1.-introduction).
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. For more detail please refer to our [wiki](https://github.com/zalopay-oss/hey-app/wiki).
 
 ### Prerequisites
 
@@ -40,11 +40,11 @@ docker-compose up --build
 
 ## Document
 
-https://gitlab.zalopay.vn/zalopay-oss/hey-app/wikis/1.-introduction
+https://github.com/zalopay-oss/hey-app/wiki
 
 ## Support
 
-- Any bugs about Hey please feel free to report [here](https://gitlab.zalopay.vn/zalopay-oss/hey-app/issues).
+- Any bugs about Hey please feel free to report [here](https://github.com/zalopay-oss/hey-app/issues).
 - And you are welcome to fork and submit pull requests.
 
 ## Authors
@@ -55,7 +55,7 @@ https://gitlab.zalopay.vn/zalopay-oss/hey-app/wikis/1.-introduction
 
 ## License
 
-This project is licensed under the [MIT License](https://gitlab.zalopay.vn/zalopay-oss/hey-app/blob/master/LICENSE.md)
+This project is licensed under the [MIT License](https://github.com/zalopay-oss/hey-app/blob/master/LICENSE.md)
 
 ## Acknowledgments
 
