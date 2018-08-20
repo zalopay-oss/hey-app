@@ -21,6 +21,11 @@ To achieve these functionalities, we will use following technology stack:
 - Websocket for messanging and instant notification
 - Redis as database
 
+
+## Brief UI of Hey
+
+![Hey App](https://github.com/zalopay-oss/hey-app/blob/master/presentation/image001.gif)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. For more detail please refer to our [wiki](https://github.com/zalopay-oss/hey-app/wiki).
